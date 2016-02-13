@@ -1,0 +1,12 @@
+Metrics/LineLength:
+  Max: 120
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+
+Style/Documentation:
+  Enabled: false
+
+Style/IndentationConsistency:
+  EnforcedStyle: rails
