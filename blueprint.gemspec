@@ -6,12 +6,12 @@ require 'blueprint/version'
 Gem::Specification.new do |spec|
   spec.name          = "blueprint"
   spec.version       = Blueprint::VERSION
-  spec.authors       = ["Roman Dubrovsky"]
-  spec.email         = ["roma2107946@gmail.com"]
+  spec.authors       = ["Datarockets"]
+  spec.email         = ["hello@datarockets.com"]
 
   spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/datarockets/blueprint"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
