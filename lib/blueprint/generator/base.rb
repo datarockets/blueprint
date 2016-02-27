@@ -2,6 +2,7 @@ module Blueprint
   module Generator
     class Base
       def initialize(name:)
+        @name = name
       end
 
       def run!

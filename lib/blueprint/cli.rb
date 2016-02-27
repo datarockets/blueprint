@@ -1,18 +1,17 @@
 require 'rubygems'
 require 'commander/import'
 
-require 'blueprint/generator/base'
+require 'blueprint/generator/rails_app'
 
 program :name, 'blueprint'
 program :version, Blueprint::VERSION
 program :description, 'Rails application starter used at datarockets'
 
-command :test do |c|
-  c.syntax = 'blueprint§ test [options]'
-  c.summary = 'Test command'
-  c.description = 'Print HEllo world message'
-  c.example 'Description test command', 'yaps test'
-  c.action do # |args, options|
-    puts Blueprint::Generator::Base.test
+command :new do |c|
+  c.syntax = 'blueprint new APP_PATH'
+  c.summary = 'Generate rails application'
+  c.description = 'Generate rails application with default settings and dependecies'
+  c.action do |args, _options|
+    Blueprint::Generator::RailsApp.new(name: args[0]).run!
   end
 end
