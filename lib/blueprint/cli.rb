@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'commander/import'
 
+require 'blueprint'
 require 'blueprint/generator/rails_app'
 
 program :name, 'blueprint'

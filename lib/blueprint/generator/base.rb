@@ -1,6 +1,8 @@
 module Blueprint
   module Generator
     class Base
+      attr_reader :name
+
       def initialize(name:)
         @name = name
       end
@@ -21,6 +23,10 @@ module Blueprint
         end
 
         def execute(config)
+        end
+
+        def shell(cmd)
+          system(cmd)
         end
     end
   end
