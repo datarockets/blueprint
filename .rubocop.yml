@@ -10,3 +10,6 @@ Style/Documentation:
 
 Style/IndentationConsistency:
   EnforcedStyle: rails
+
+AllCops:
+  TargetRubyVersion: 2.2

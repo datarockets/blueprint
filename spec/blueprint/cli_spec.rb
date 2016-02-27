@@ -3,6 +3,6 @@ RSpec.describe 'Bluepirnt test command' do
 
   it 'example' do
     stdout, _stderr, _status = stubbed_env.execute('bin/blueprint test')
-    expect(stdout).to eq "Hello world!!!\n"
+    expect(stdout).to eq "test\n\n"
   end
 end
