@@ -13,6 +13,8 @@ module Blueprint
           cd_path(name)
 
           copy_file(".editorconfig")
+          copy_file(".gitignore")
+          copy_file(".ruby-version")
         end
 
         def self.template_path
