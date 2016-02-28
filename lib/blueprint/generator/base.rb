@@ -26,7 +26,33 @@ module Blueprint
         end
 
         def shell(cmd)
+          cmd_title("Run #{cmd}")
           system(cmd)
+        end
+
+        def copy_file(from, to = nil)
+          cmd_title("Copy file #{from}")
+          to = from if to.nil?
+          FileUtils.cp(template_path + from, to)
+        end
+
+        def cd_path(path)
+          cmd_title("Cnahge the current directory to #{path}")
+          FileUtils.cd(path)
+        end
+
+        def template_path
+          File.expand_path(File.dirname(__FILE__)) + '/templates/' + self.class.template_path + '/'
+        end
+
+        def self.template_path
+          ''
+        end
+
+        def cmd_title(title)
+          puts
+          puts title
+          puts
         end
     end
   end

@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 1.10'
   spec.add_development_dependency 'rake', '~> 10.0'
-  %w(rspec simplecov rubocop pry rspec-shell-expectations).each do |dependecy|
+  %w(rspec simplecov rubocop pry rails).each do |dependecy|
     spec.add_development_dependency dependecy
   end
 
