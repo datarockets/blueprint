@@ -4,11 +4,8 @@ require 'blueprint'
 require 'blueprint/generator/rails_app'
 require 'simplecov'
 require 'pry'
-require 'rspec/shell/expectations'
 
-RSpec.configure do |config|
-  config.include Rspec::Shell::Expectations
-
+RSpec.configure do |_config|
   SimpleCov.start do
     add_filter '/vendor/'
     add_filter '/spec/'

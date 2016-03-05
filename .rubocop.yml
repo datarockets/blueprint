@@ -13,3 +13,7 @@ Style/IndentationConsistency:
 
 AllCops:
   TargetRubyVersion: 2.2
+
+# long script methods
+Metrics/MethodLength:
+  Enabled: false

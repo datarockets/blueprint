@@ -13,11 +13,11 @@ module Blueprint
 
         def render(template_file)
           template = File.open(template_file).read
-          ERB.new(template, 0, "%<>").result(binding)
+          ERB.new(template, 0, '%<>').result(binding)
         end
 
         def save(from, to)
-          File.open(to, "w+") do |f|
+          File.open(to, 'w+') do |f|
             f.write(render(from))
           end
         end

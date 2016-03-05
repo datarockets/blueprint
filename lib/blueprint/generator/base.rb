@@ -15,8 +15,8 @@ module Blueprint
         execute
       end
 
-      def self.test
-        puts 'test'
+      def self.template_path
+        ''
       end
 
       private
@@ -26,10 +26,6 @@ module Blueprint
         end
 
         def execute
-        end
-
-        def self.template_path
-          ''
         end
 
         def shell(cmd)
