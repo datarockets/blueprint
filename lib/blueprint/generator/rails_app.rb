@@ -27,6 +27,8 @@ module Blueprint
           shell 'rm config/database.yml'
           shell 'mv config/secrets.yml config/examples/secrets.yml'
           copy_file_from_template('database.yml', 'config/examples/database.yml')
+
+          copy_file_from_template('Gemfile')
         end
     end
   end
