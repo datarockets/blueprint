@@ -1,15 +1,18 @@
+require 'blueprint/generator/base/template_rendering'
+
 module Blueprint
   module Generator
     class Base
-      attr_reader :name
+      attr_reader :name, :config
 
       def initialize(name:)
         @name = name
+        @config = {}
       end
 
       def run!
-        config = ask_questions
-        execute(config)
+        ask_questions
+        execute
       end
 
       def self.test
@@ -22,7 +25,11 @@ module Blueprint
           {}
         end
 
-        def execute(config)
+        def execute
+        end
+
+        def self.template_path
+          ''
         end
 
         def shell(cmd)
@@ -36,6 +43,14 @@ module Blueprint
           FileUtils.cp(template_path + from, to)
         end
 
+        def copy_file_from_template(from, to = nil)
+          cmd_title("Copy file #{from} from template")
+          to = from if to.nil?
+
+          template = TemplateRendering.new(name, config)
+          template.save(template_path + from + '.erb', to)
+        end
+
         def cd_path(path)
           cmd_title("Cnahge the current directory to #{path}")
           FileUtils.cd(path)
@@ -43,10 +58,6 @@ module Blueprint
 
         def template_path
           File.expand_path(File.dirname(__FILE__)) + '/templates/' + self.class.template_path + '/'
-        end
-
-        def self.template_path
-          ''
         end
 
         def cmd_title(title)
