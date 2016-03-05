@@ -22,7 +22,6 @@ module Blueprint
       private
 
         def ask_questions
-          {}
         end
 
         def execute
