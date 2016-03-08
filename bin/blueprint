@@ -3,5 +3,3 @@
 require 'bundler/setup'
 
 require 'blueprint/cli'
-
-Blueprint::Cli.new.run if $PROGRAM_NAME == __FILE__
